@@ -1,0 +1,434 @@
+@font-face {
+  font-family: "outfit";
+  src: url('./fonts/Outfit/static/Outfit-Medium.ttf') format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'outfit', sans-serif;
+}
+
+body {
+  background: #619ebd;
+  color: rgb(7, 5, 53);
+  font-family: "outfit", sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: rgba(9, 109, 122, 0.621);
+  z-index: 2000;
+  backdrop-filter: blur(10px);
+    align-items: center;
+}
+
+
+.logo {
+  width: 120pt;
+  height: 80pt;
+  cursor: pointer;
+}
+
+.menu-btn {
+  height: 30pt;
+  width: 30pt;
+  margin-right: 2%;
+  margin-top: 2%;
+  cursor:pointer;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px; 
+  width: 250px;
+  height: 100%;
+  background: rgb(25, 87, 98);
+  padding: 20px;
+  transition: 0.3s;
+  z-index: 3000;
+  backdrop-filter: blur(10px);
+}
+
+.sidebar a {
+  display: block;
+  margin: 20px 0;
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* VIDEO */
+.bg-video {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+/* затемнение (как у Apple) */
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+/* контент поверх видео */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.bg-video {
+  pointer-events: none;
+  animation: zoom 20s infinite alternate ease-in-out;
+}
+
+@keyframes zoom {
+  from {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+/* BUTTONS */
+.btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.small {
+  padding: 8px 15px;
+}
+
+/* CARDS */
+.section {
+  padding: 100px 20px;
+  text-align: center;
+  font-size: 12pt;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.66);
+  padding: 25px;
+  border-radius: 15px;
+  width: 250px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+
+
+/* ANIMATION */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.9s;
+  margin-bottom: 20pt;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+  margin: 10pt;
+}
+
+
+.hidden-text {
+  margin-top: 10pt;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.5s ease;
+  color: black;
+}
+
+.hidden-text.show {
+  max-height: 200px;
+  opacity: 1;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.clients {
+  background: #f5f5f5;
+  color: black;
+  font-size: 17px;
+}
+
+.clients-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* КЛЮЧЕВОЕ ИСПРАВЛЕНИЕ */
+.clients-logos img {
+  width: 150px;        
+  height: 110px;        
+  object-fit: contain; 
+  padding: 9px;
+  opacity: 0.75;
+  transition: 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.clients-logos img.imgg {
+  width: 180px;
+  height: 140px;
+}
+
+/* hover эффект */
+.clients-logos img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.08);
+}
+
+/* адаптив */
+@media (max-width: 768px) {
+  .clients-logos img {
+    width: 110px;
+    height: 60px;
+  }
+}
+
+
+.footer {
+  background: rgb(25, 87, 98);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.footer-links {
+  margin: 20px 0;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: #aaa;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.copyright {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.fade-in-about {
+  opacity: 0;
+  transform: translateY(60px) scale(0.98);
+  transition: all 0.8s ease;
+}
+
+.fade-in-about.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+
+.about-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 30px;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.about-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.about-hero h1 {
+  font-size: 56px;
+  font-weight: 600;
+}
+
+.about-hero p {
+  font-size: 20px;
+  opacity: 0.7;
+}
+
+.footer h3{
+  padding-bottom: 20pt;
+}
+
+.footer h2{
+  padding-bottom: 20pt;
+}
+
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* LANG SWITCH */
+.lang-switch {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+}
+
+.lang-switch button {
+  border: none;
+  background: transparent;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lang-switch button:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.lang-switch button.active {
+  background: #4facfe;
+  color: black;
+}
+
+
+
+.contact {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.contact-link {
+  text-decoration: none;
+  color: #92b6e1;
+  margin-left: 5px;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+
+.contact-link:hover {
+  color: #007BFF;
+  transform: translateY(-3px) scale(1.05);
+}
+
+
+.contact-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -3px;
+  background-color: #007BFF;
+  transition: width 0.3s ease;
+}
+
+.contact-link:hover::after {
+  width: 100%;
+}
+
+/* 💬 отдельный стиль для WhatsApp */
+.contact-link.whatsapp:hover {
+  color: #25D366;
+}
+
+.contact-link.whatsapp::after {
+  background-color: #25D366;
+}

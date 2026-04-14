@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modern Site</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="about.css">
+</head>
+
+<body>
+
+  <!-- navbar -->
+  <header class="navbar">
+    <div class="logo" onclick="goHome()"><img class="logo" src='../project/pict/new_logo-removebg-preview.png' /></div>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <button data-lang="ru">RU</button>
+        <button data-lang="en">EN</button>
+      </div>
+
+    </div>
+    <div class="menu-btn" onclick="toggleMenu()"><img class="menu-btn" src="pict/sidebar.png"/></div>
+
+  </header>
+
+  <!-- sidebar (menu) -->
+   
+   <div class="sidebar" id="sidebar">
+    <a href="index.html" data-i18n="home"></a>
+    <a href="about.html" data-i18n="about"></a>
+    <a href="#">Zeto EDMS trial version</a>
+  </div>
+  <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+  <!-- HERO -->
+  <section class="about-hero fade-in">
+  <h1>Zeto EDMS</h1>
+  <p data-i18n="heroText"></p>
+</section>
+
+<section class="about-container">
+
+  <div class="about-card fade-in">
+    <h2 data-i18n="aboutTitle"></h2>
+    <p data-i18n="aboutText"></p>
+  </div>
+
+  <div class="about-card fade-in">
+   <h2 data-i18n="globalTitle"></h2>
+    <p data-i18n="globalText"></p>
+  </div>
+
+  <div class="about-card fade-in">
+    <h2 data-i18n="functionalityTitle"></h2>
+    <p data-i18n="functionalityText"></p>
+  </div>
+
+  <div class="about-card fade-in">
+    <h2 data-i18n="automationTitle"></h2>
+    <p data-i18n="automationText"></p>
+  </div>
+
+  <div class="about-card fade-in">
+    <h2 data-i18n="analyticsTitle"></h2>
+    <p data-i18n="analyticsText"></p>
+  </div>
+
+  <div class="about-card fade-in">
+    <h2 data-i18n="aboutTitle"></h2>
+    <p data-i18n="aboutText"></p>
+  </div>
+
+</section>
+
+<section>
+    <div class="logo">
+        <img src="./pict/new_logo-removebg-preview.png" alt="logo">
+    </div>
+</section>
+
+<section class="team fade-in">
+
+  <div class="team-content">
+    <h2 data-i18n="teamTitle"></h2>
+
+    <p data-i18n="teamText"></p>
+
+    <p data-i18n="devText"></p>
+
+    <p data-i18n="companyText"></p>
+
+    <p data-i18n="deploymentText"></p>
+
+    <p data-i18n="flexibilityText"></p>
+
+    <p data-i18n="supportText"></p>
+
+    <p data-i18n="cooperationText"></p>
+
+  </div>
+</section>
+
+  <footer class="footer">
+    <h2 data-i18n="contacts"></h2>
+
+    <h3>Zeto EDMS</h3>
+
+    <p class="contact">
+    📧 Email:
+    <a href="mailto:argin007@mail.ru" class="contact-link">argin007@mail.ru</a>
+    </p>
+
+    <p class="contact">
+    💬 WhatsApp:
+    <a href="https://wa.me/+77014442111" class="contact-link whatsapp">+7 701 444 2 111</a>
+    </p>
+
+    <div class="footer-links">
+      <a data-i18n="home" href="index.html"></a>
+      <a data-i18n="about" href="about.html"></a>
+    </div>
+
+    <p class="copyright">
+      © 2026 Zeto. All rights reserved.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

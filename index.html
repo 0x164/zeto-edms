@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modern Site</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+  <!-- navbar -->
+  <header class="navbar">
+    <div class="logo" onclick="goHome()"><img class="logo" src='../project/pict/new_logo-removebg-preview.png' /></div>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <button data-lang="ru">RU</button>
+        <button data-lang="en">EN</button>
+      </div>
+
+    </div>
+    <div class="menu-btn" onclick="toggleMenu()"><img class="menu-btn" src="pict/sidebar.png"/></div>
+
+  </header>
+
+  <!-- sidebar (menu) -->
+   
+  <div class="sidebar" id="sidebar">
+    <a href="#" data-i18n="home"></a>
+    <a href="about.html" data-i18n="about"></a>
+    <a href="#">Zeto EDMS trial version</a>
+  </div>
+  <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <!-- video bg -->
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="pict/124208-730508441_medium.mp4" type="video/mp4">
+    </video>
+      
+    <div class="hero-content">
+      <h1 data-i18n="heroTitle"></h1>
+<p data-i18n="heroText"></p>
+<button class="btn" data-i18n="getStarted"></button>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <h2 data-i18n="featuresTitle"></h2>
+
+    <div class="cards">
+      <div class="card fade-in phase">
+        <h3 data-i18n="stageTitle"></h3>
+        <p data-i18n="contracting"></p>
+
+        <button data-i18n="openButton" class="btn small btn-click"></button>
+
+        <p data-i18n="hiddenContracting" class="hidden-text"></p>
+      </div>
+
+      <div class="card fade-in phase">
+        <h3 data-i18n="stageTitle"></h3>
+        <p data-i18n="design"></p>
+        <button data-i18n="openButton" class="btn small btn-click"></button>
+
+        <p data-i18n="hiddenDesign" class="hidden-text"></p>
+      </div>
+
+      <div class="card fade-in phase">
+        <h3 data-i18n="stageTitle"></h3>
+        <p data-i18n="procurement"></p>
+        <button data-i18n="openButton" class="btn small btn-click"></button>
+
+        <p data-i18n="hiddenProcurment" class="hidden-text"></p>
+
+      </div>
+      
+      <div class="card fade-in phase">
+        <h3 data-i18n="stageTitle"></h3>
+        <p data-i18n="construction"></p>
+        <button data-i18n="openButton" class="btn small btn-click"></button>
+
+        <p data-i18n="hiddenConctruction" class="hidden-text"></p>
+      </div>
+
+
+      <div class="card fade-in phase">
+        <h3 data-i18n="stageTitle"></h3>
+        <p data-i18n="exploitation"></p>
+        <button data-i18n="openButton" class="btn small btn-click"></button>
+
+        <p data-i18n="hiddenExploitation" class="hidden-text"></p>
+      </div>
+
+
+      <div class="card fade-in phase">
+        <h3 data-i18n="stageTitle"></h3>
+        <p data-i18n="administartion"></p>
+        <button data-i18n="openButton" class="btn small btn-click"></button>
+
+        <p data-i18n="hiddenAdministraton" class="hidden-text"></p>
+      </div>
+    </div>
+  </section>
+  <section class="section clients">
+    <h2 data-i18n="clients"></h2>
+
+    <div class="clients-logos">
+      <img src="pict/badra.jpeg">
+      <img src="pict/Bi-group.png">
+      <img src="pict/Gazprom-Logo.svg.png">
+      <img src="pict/kazstroy-engineering-india-pvt-ltd-85433.jpg">
+      <img class="imgg" src="pict/new_logo.png">
+      <img src="pict/kazpaco (1).png">
+      <img src="pict/Türkiye_Petrolleri_logo.svg.png">
+      <img src="pict/Logo FZCO.avif">
+      <img src="pict/uniq.avif">
+    </div>
+  </section>
+
+  <footer class="footer">
+    <h2 data-i18n="contacts"></h2>
+
+    <h3>Zeto EDMS</h3>
+
+    <p class="contact">
+    📧 Email:
+    <a href="mailto:argin007@mail.ru" class="contact-link">argin007@mail.ru</a>
+    </p>
+
+    <p class="contact">
+    💬 WhatsApp:
+    <a href="https://wa.me/+77014442111" class="contact-link whatsapp">+7 701 444 2 111</a>
+    </p>
+
+    <div class="footer-links">
+      <a data-i18n="home" href="index.html"></a>
+      <a data-i18n="about" href="about.html"></a>
+    </div>
+
+    <p class="copyright">
+      © 2026 Zeto. All rights reserved.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
